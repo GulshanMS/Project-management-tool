@@ -1,0 +1,42 @@
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .task-card {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .task-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Priority-Based Colors */
+  .task-card.high {
+    background: #ffdddd;
+    border-left: 5px solid red;
+  }
+  
+  .task-card.medium {
+    background: #fff3cd;
+    border-left: 5px solid orange;
+  }
+  
+  .task-card.low {
+    background: #d4edda;
+    border-left: 5px solid green;
+  }
+  
+  /* Task Status Dropdown */
+  .task-status {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: #f8f9fa;
+  }
+  

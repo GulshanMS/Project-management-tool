@@ -1,0 +1,59 @@
+.dashboard {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #003366;
+    font-size: 24px;
+  }
+  
+  .dashboard-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .card {
+    background: linear-gradient(135deg, #001f3f, #0056b3);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+  }
+  
+  .card .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .pending {
+    color: yellow;
+  }
+  
+  .progress {
+    color: orange;
+  }
+  
+  .completed {
+    color: green;
+  }
+  
+  .employees {
+    color: cyan;
+  }
+  
+  .tasks {
+    color: lightgreen;
+  }
+  
+  .reports {
+    color: violet;
+  }
+  

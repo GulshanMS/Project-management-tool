@@ -1,0 +1,13 @@
+.tasks-page {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .page-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
