@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { setUser } from "./AuthService";
-import "./Auth.css"; // Import new styles
+import { login } from "./AuthService";
+import "./Auth.css"; // Import styles
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        // Mock authentication (Replace with real API call)
-        setUser({ email });
-        navigate("/employee-dashboard"); // Redirect after login
+        try {
+            const user = await login(email, password);
+            navigate(user.role === "manager" ? "/manager-dashboard" : "/employee-dashboard");
+        } catch (error) {
+            alert(error.message);
+        }
     };
 
     return (
@@ -33,6 +36,7 @@ const Login = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
+                        autoComplete="current-password"
                     />
                     <button type="submit">Login</button>
                 </form>

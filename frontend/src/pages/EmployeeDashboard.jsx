@@ -2,16 +2,16 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
-const EmployeeDashboard = () => {
+const ManagerDashboard = () => {
     return (
         <div className="dashboard-container">
             <Navbar />
             <Sidebar />
             <div className="content">
-                <h2>Welcome to Employee Dashboard</h2>
+                <h2>Welcome to Manager Dashboard</h2>
             </div>
         </div>
     );
 };
 
-export default EmployeeDashboard;
+export default ManagerDashboard;

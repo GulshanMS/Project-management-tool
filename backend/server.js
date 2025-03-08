@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const authRoutes = require("./routes/authRoutes.js");
+const taskRoutes = require("./routes/taskRoutes.js");  // ✅ Add this line
 
 const app = express();
 app.use(express.json());
@@ -14,5 +15,6 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.log(err));
 
 app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes);  // ✅ Register task routes
 
 app.listen(5000, () => console.log("Server running on port 5000"));

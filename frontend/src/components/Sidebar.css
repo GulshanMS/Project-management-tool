@@ -1,69 +1,129 @@
+/* Sidebar Container */
 .sidebar {
-    width: 70px;
-    height: 100vh;
-    background: linear-gradient(45deg, #001f3f, #003366);
-    color: white;
-    transition: width 0.4s ease-in-out;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .sidebar.open {
-    width: 220px;
-    align-items: flex-start;
-  }
-  
-  .toggle-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    padding: 15px;
-    cursor: pointer;
-    align-self: flex-start;
-  }
-  
+  width: 100%;
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2); /* Light turquoise gradient for a clean and calm feel */
+  padding: 12px 0; /* Reduced height for a more compact sidebar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+  border-bottom: 1px solid #b2dfdb; /* Soft border to add separation */
+  transition: all 0.3s ease;
+}
+
+/* Navigation List */
+.sidebar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 20px; /* Adjusted gap for better compactness */
+}
+
+/* Sidebar List Item */
+.sidebar ul li {
+  padding: 8px 18px; /* Balanced padding for a neat appearance */
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover effect on each list item */
+.sidebar ul li:hover {
+  transform: scale(1.05); /* Slightly reduce scale for smooth transition */
+  background: rgba(255, 255, 255, 0.2); /* Light background color on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow effect */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navigation Links Styling */
+.nav-link {
+  text-decoration: none;
+  color: #37474f; /* Professional dark gray for text */
+  font-weight: 500; /* Medium font weight for clarity */
+  font-size: 16px; /* Optimal size for readability */
+  letter-spacing: 0.5px; /* Subtle letter-spacing for a cleaner look */
+  transition: all 0.3s ease;
+}
+
+/* Hover effects on navigation link */
+.sidebar ul li:hover .nav-link {
+  color: #0277bd; /* Soft blue color for hover effect */
+  text-decoration: underline; /* Underline effect for emphasis */
+}
+
+/* Styling for Logout Button */
+.logout {
+  color: #e57373; /* Soft red for logout button */
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for logout button */
+.logout:hover {
+  color: #d32f2f; /* Darker red for hover effect */
+  transform: translateY(-1px); /* Slight lift effect on hover */
+  transition: all 0.3s ease;
+}
+
+/* Add an icon or other interactive elements next to text */
+.sidebar ul li .icon {
+  margin-right: 8px;
+  font-size: 18px; /* Adjust icon size for better alignment */
+  color: #37474f; /* Match text color */
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li:hover .icon {
+  color: #0277bd; /* Soft blue for icon hover effect */
+  transition: all 0.3s ease;
+}
+
+/* Add a subtle transition on the sidebar's background when hovered */
+.sidebar:hover {
+  background: linear-gradient(135deg, #b2ebf2, #e0f7fa); /* Reverse gradient effect for hover */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Subtle increase in shadow depth */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+    gap: 18px; /* Adjust gap for mobile screens */
   }
-  
+
   .sidebar ul li {
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: background 0.3s;
-    cursor: pointer;
-    width: 100%;
+    padding: 8px 14px; /* Reduced padding on smaller screens */
   }
-  
-  .sidebar ul li:hover {
-    background: #0056b3;
+
+  .nav-link {
+    font-size: 15px; /* Slightly smaller font size for mobile */
   }
-  
-  .sidebar ul li span {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    white-space: nowrap;
+
+  .sidebar {
+    padding: 8px 0; /* Reduced padding for mobile screens */
   }
-  
-  .sidebar.open ul li span {
-    opacity: 1;
+}
+
+/* Optional: Animating Sidebar Entry */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
   }
-  
-  .hidden {
-    display: none;
+  100% {
+    transform: translateX(0);
   }
-  
-  .visible {
-    display: inline;
-  }
-  
+}
+
+.sidebar {
+  animation: slideIn 0.5s ease-out; /* Slide-in animation for sidebar */
+}

@@ -1,54 +1,143 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9; /* Light neutral background for the page */
+    color: #34495e; /* Dark slate gray for text */
+}
+
+/* Auth Container */
 .auth-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #2c3e50, #3498db); /* Gradient background for modern look */
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Auth Box */
 .auth-box {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    background: #ffffff; /* White background for the form box */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 320px;
+    width: 90%;
+    max-width: 400px;
+    transform: translateY(-50px);
+    animation: slideIn 0.5s ease-out;
 }
 
+/* Slide-in effect for the box */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
 .auth-box h2 {
     margin-bottom: 20px;
-    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50; /* Dark color for the heading */
+    animation: fadeInText 1s ease-out;
 }
 
+/* Fade-in animation for the heading */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Input fields */
 input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 12px;
+    margin: 15px 0;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #ecf0f1; /* Light gray background for input */
+    transition: all 0.3s ease;
 }
 
+/* Focus effect for input */
+input:focus {
+    border-color: #3498db; /* Blue border on focus */
+    box-shadow: 0px 0px 5px rgba(52, 152, 219, 0.5); /* Subtle focus shadow */
+    outline: none;
+}
+
+/* Button */
 button {
     width: 100%;
-    background-color: #6a11cb;
+    background-color: #3498db; /* Soft blue for the button */
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
+/* Button hover effect */
 button:hover {
-    background-color: #2575fc;
+    background-color: #2980b9; /* Darker blue for hover */
+    transform: scale(1.05);
 }
 
+/* Link */
 .link {
-    color: #6a11cb;
-    cursor: pointer;
+    color: #3498db; /* Soft blue for links */
     font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s ease;
 }
 
+/* Link hover effect */
 .link:hover {
     text-decoration: underline;
+    color: #2980b9; /* Darker blue shade on hover */
+}
+
+/* Mobile-friendly styling */
+@media (max-width: 600px) {
+    .auth-box {
+        padding: 25px;
+        width: 90%;
+    }
+
+    .auth-box h2 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
 }
